@@ -16,7 +16,7 @@ class ShopController extends Controller
             'phone_number' => '0000000000'
         ]);
 
-        return "created shop";
+        return redirect("/list");
     }
 
     public function display() {
