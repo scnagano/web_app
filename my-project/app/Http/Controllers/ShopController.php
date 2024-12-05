@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 class ShopController extends Controller
 {
     public function create(Request $request) {
+        // フロントで入力された内容を受け取る
         $email = $request->input('email');
 
+        // テーブルにデータを登録
         DB::table('shops')->insert([
             'name' => 'test name',
             'email' => $email,
@@ -23,7 +25,7 @@ class ShopController extends Controller
         // tableデータを取得
         $shops = DB::table('shops')->get();
 
-        // データをviewに渡す & viewを表示する
+        // データをviewに渡す & viewを表示
         return view('list', ['shops' => $shops]);
     }
 
