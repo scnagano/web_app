@@ -18,4 +18,12 @@ class ShopController extends Controller
 
         return "created shop";
     }
+
+    public function display() {
+        // tableデータを取得
+        $shops = DB::table('shops')->get();
+
+        // データをviewに渡す & viewを表示する
+        return view('list', ['shops' => $shops]);
+    }
 }
