@@ -18,3 +18,5 @@ Route::get('/register', function () {
 });
 
 Route::get('/list', [ShopController::class, 'display']);
+
+Route::get('/update', [ShopController::class, 'update']);

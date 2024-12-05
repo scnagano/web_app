@@ -26,4 +26,15 @@ class ShopController extends Controller
         // データをviewに渡す & viewを表示する
         return view('list', ['shops' => $shops]);
     }
+
+    public function update() {
+        // 更新対象のデータを取得
+        // データの更新
+        $affected = DB::table('shops')
+              ->where('id', 2)
+              ->update(['name' => 'updated']);
+
+        // 画面遷移
+        return redirect("/list");
+    }
 }
