@@ -9,9 +9,10 @@ class ShopController extends Controller
 {
     public function create(Request $request) {
         $email = $request->input('email');
+        $shop_name = $request->input('shop_name');
 
         DB::table('shops')->insert([
-            'name' => 'test name',
+            'name' => $shop_name,
             'email' => $email,
             'phone_number' => '0000000000'
         ]);
